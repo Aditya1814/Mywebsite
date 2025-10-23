@@ -1,0 +1,71 @@
+.main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+  background-color: #f9fafb;
+  color: #222;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.desc {
+  font-size: 1.1rem;
+  max-width: 600px;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Scoped link styles */
+.buttons a {
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+/* Button color classes */
+.github {
+  background-color: #24292e;
+}
+.github:hover {
+  background-color: #000;
+}
+
+.linkedin {
+  background-color: #0077b5;
+}
+.linkedin:hover {
+  background-color: #005f8c;
+}
+
+.contact {
+  background-color: #28a745;
+}
+.contact:hover {
+  background-color: #218838;
+}
