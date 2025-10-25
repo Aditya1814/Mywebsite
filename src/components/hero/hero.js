@@ -1,5 +1,6 @@
 "use client"
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import styles from "./hero.module.css";
 
 export default function Hero() {
@@ -34,7 +35,7 @@ export default function Hero() {
     }, typingSpeed);
 
     return () => clearTimeout(timeout);
-  }, [displayedText, isDeleting, currentRoleIndex]);
+  }, [displayedText, isDeleting, currentRoleIndex, roles]);
 
   useEffect(() => {
     const cursorInterval = setInterval(() => {
@@ -52,7 +53,7 @@ export default function Hero() {
             Hello<span className={styles.dot}>.</span>
           </h1>
           <div className={styles.divider}></div>
-          <h2 className={styles.introduction}>I'm Aditya Reddy</h2>
+          <h2 className={styles.introduction}>I&apos;m Aditya Reddy</h2>
           <h3 className={styles.title}>
             <span className={styles.iAm}>I am a    </span>
             <span className={styles.animatedText}>
@@ -77,10 +78,13 @@ export default function Hero() {
 
         <div className={styles.imageContainer}>
           <div className={styles.imageWrapper}>
-            <img
+            <Image
               src="/images/portifolioimg.jfif"
               alt="Aditya"
               className={styles.avatar}
+              width={450}
+              height={450}
+              priority
             />
           </div>
         </div>

@@ -1,5 +1,6 @@
 "use client"
 import { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
 import styles from "./skills.module.css";
 
 export default function Skills() {
@@ -26,6 +27,8 @@ export default function Skills() {
   ];
 
   useEffect(() => {
+    const currentRef = sectionRef.current; // Store ref in variable
+    
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -35,13 +38,13 @@ export default function Skills() {
       { threshold: 0.1 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef); // Use variable in cleanup
       }
     };
   }, []);
@@ -65,10 +68,13 @@ export default function Skills() {
             style={{ animationDelay: `${index * 0.05}s` }}
           >
             <div className={styles.iconWrapper}>
-              <img 
+              <Image 
                 src={skill.icon} 
                 alt={skill.name}
                 className={styles.skillIcon}
+                width={80}
+                height={80}
+                unoptimized
               />
             </div>
             <span className={styles.skillName}>{skill.name}</span>

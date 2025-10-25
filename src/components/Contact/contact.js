@@ -7,7 +7,7 @@ export default function Contact() {
         <div className={styles.leftContent}>
           <h1 className={styles.title}>Contact</h1>
           <h2 className={styles.heading}>Have a project?</h2>
-          <h2 className={styles.heading}>Let's Talk!</h2>
+          <h2 className={styles.heading}>Let&apos;s Talk!</h2>
           <button className={styles.submitBtn}>Submit</button>
         </div>
 
