@@ -1,10 +1,11 @@
 "use client"
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
 import styles from "./hero.module.css";
 
+
+const roles = ["Software Developer", "Programmer", "Full Stack Developer"];
 export default function Hero() {
-  const roles = [" Software Developer", " Programmer", " Full Stack Developer"];
+  
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
@@ -12,9 +13,10 @@ export default function Hero() {
 
   useEffect(() => {
     const currentRole = roles[currentRoleIndex];
-
+    
     const typingSpeed = isDeleting ? 20 : 50;
-    const pauseTime = isDeleting ? 500 : 1500;
+    const pauseTime = isDeleting ? 500 : 1000;
+
     if (!isDeleting && displayedText === currentRole) {
       setTimeout(() => setIsDeleting(true), pauseTime);
       return;
@@ -35,12 +37,12 @@ export default function Hero() {
     }, typingSpeed);
 
     return () => clearTimeout(timeout);
-  }, [displayedText, isDeleting, currentRoleIndex, roles]);
+  }, [displayedText, isDeleting, currentRoleIndex]);
 
   useEffect(() => {
     const cursorInterval = setInterval(() => {
       setShowCursor((prev) => !prev);
-    }, 600);
+    }, 500);
 
     return () => clearInterval(cursorInterval);
   }, []);
@@ -55,7 +57,7 @@ export default function Hero() {
           <div className={styles.divider}></div>
           <h2 className={styles.introduction}>I&apos;m Aditya Reddy</h2>
           <h3 className={styles.title}>
-            <span className={styles.iAm}>I am a    </span>
+            <span className={styles.iAm}>I&apos;m a</span>
             <span className={styles.animatedText}>
               {displayedText}
             </span>
@@ -64,7 +66,7 @@ export default function Hero() {
           <p className={styles.description}>
             I am a motivated and versatile individual, always eager to take on new challenges. With a passion for learning I am dedicated to delivering high-quality results. With a positive attitude and a growth mindset, I am ready to make a meaningful contribution and achieve great things.
           </p>
-          <div className={styles.buttons}>
+           <div className={styles.buttons}>
             <a
               href="/files/resume.pdf"
               className={styles.secondaryBtn}
@@ -75,20 +77,23 @@ export default function Hero() {
             </a>
           </div>
         </div>
+       
+        </div>
 
         <div className={styles.imageContainer}>
           <div className={styles.imageWrapper}>
-            <Image
-              src="/images/portifolioimg.jfif"
+            <img
+              src="/images/portifolioimg.jpg"
               alt="Aditya"
               className={styles.avatar}
               width={450}
               height={450}
-              priority
+           
             />
           </div>
         </div>
-      </div>
+        
+      
     </section>
   );
 }
