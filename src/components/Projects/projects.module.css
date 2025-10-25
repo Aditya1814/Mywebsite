@@ -1,0 +1,147 @@
+.projects {
+  min-height: 100vh;
+  padding: 6rem 5rem;
+  background-color: #121e27;
+}
+
+.sectionTitle {
+  font-size: 3.5rem;
+  text-align: center;
+  margin-bottom: 4rem;
+  color:#fff
+}
+
+.projectsList {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.projectCard {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+  align-items: start;
+}
+
+.projectImage {
+  width: 100%;
+}
+
+.imagePlaceholder {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.exclamation {
+  font-size: 6rem;
+  color: #ff6b6b;
+  font-weight: bold;
+}
+
+.projectInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.projectTitle {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color:#fff
+}
+
+.techStack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.techBadge {
+  padding: 0.5rem 1.2rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 25px;
+  font-size: 0.95rem;
+  color:#fff
+}
+
+.projectDescription {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #fff;
+}
+
+.projectLinks {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.githubBtn {
+  padding: 0.8rem 2rem;
+  background-color: #ff6b6b;
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.githubBtn:hover {
+  background-color: #ff5252;
+}
+
+.liveBtn {
+  padding: 0.8rem 2rem;
+  background-color: transparent;
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border-bottom: 2px solid white;
+  transition: color 0.3s, border-color 0.3s;
+}
+
+.liveBtn:hover {
+  color: #ff6b6b;
+  border-color: #ff6b6b;
+}
+
+@media (max-width: 1024px) {
+  .projectCard {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects {
+    padding: 4rem 2rem;
+  }
+
+  .sectionTitle {
+    font-size: 2.5rem;
+  }
+
+  .projectTitle {
+    font-size: 2rem;
+  }
+
+  .projectLinks {
+    flex-direction: column;
+  }
+
+  .githubBtn,
+  .liveBtn {
+    width: 100%;
+    text-align: center;
+  }
+}
